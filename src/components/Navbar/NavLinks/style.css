@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'MarkPro';
+  src: url('../../../../public/assets/fonts/Mark-Pro.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.matter-logo {
+  color: #030303;
+  font-family: 'MarkPro', sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  display: inline;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: #030303;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-list-item {
+  margin: 0 12px;
+}

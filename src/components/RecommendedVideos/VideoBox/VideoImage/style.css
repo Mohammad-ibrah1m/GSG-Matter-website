@@ -1,0 +1,22 @@
+.video-image-holder {
+  position: relative;
+  height: 240px;
+}
+
+.video-img {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 25px;
+  height: 100%;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  z-index: 99999999999999999999999;
+  color: #fff;
+}

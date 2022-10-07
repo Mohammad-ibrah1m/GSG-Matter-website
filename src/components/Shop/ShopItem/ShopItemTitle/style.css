@@ -1,0 +1,15 @@
+.shop-item-title {
+  color: #030303;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 30px;
+  margin: auto;
+  letter-spacing: 1px;
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  bottom: 60px;
+  text-transform: uppercase;
+  z-index: 999999999;
+}

@@ -1,0 +1,9 @@
+.info-title-type:after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+  background-color: #33333a;
+}

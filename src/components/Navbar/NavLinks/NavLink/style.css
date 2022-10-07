@@ -1,0 +1,14 @@
+.nav-link {
+  color: #33333a;
+  text-decoration: none;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dropdown-icon {
+  font-size: 10px;
+  margin-left: 12px;
+}

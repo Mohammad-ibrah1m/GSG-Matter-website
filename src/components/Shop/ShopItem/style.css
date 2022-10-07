@@ -1,0 +1,31 @@
+.shop-item {
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.shop-item::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #33333a;
+  opacity: 0;
+  z-index: 3;
+  transition: all 0.4s ease-in-out;
+}
+
+.shop-item button.btn-view {
+  z-index: 9999;
+}
+
+.shop-item:hover button.btn-view {
+  opacity: 1;
+}
+
+.shop-item:hover::after {
+  opacity: 0.5;
+}

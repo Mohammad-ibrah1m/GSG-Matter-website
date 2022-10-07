@@ -1,0 +1,9 @@
+.add-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #030303;
+  color: #fff;
+  font-size: 14px;
+  height: 40px;
+}

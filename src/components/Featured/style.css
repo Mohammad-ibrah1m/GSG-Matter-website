@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-grey {
+  background-color: #fcfcfc;
+}
+
+.section {
+  text-align: center;
+
+  padding-top: 62px;
+}
+
+.container {
+  width: 1242px;
+  margin: auto;
+}
+
+@font-face {
+  font-family: 'VLnewParis';
+  src: url(../../../public/assets/fonts/VL_NewParis\ Headline\ Regular.woff);
+}
+
+.featured-title {
+  font-family: 'VLnewParis';
+  color: #33333a;
+  font-size: 42px;
+  font-weight: 400;
+}

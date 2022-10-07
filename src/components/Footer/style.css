@@ -1,0 +1,111 @@
+.footer-section {
+  background-color: #33333a;
+  color: #dedede;
+  text-align: left;
+  margin-top: 60px;
+  padding-top: 41px;
+  padding-bottom: 41px;
+}
+
+.footer-content {
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.footer-title.section-title {
+  font-size: 18px;
+  line-height: 1.667;
+  color: #fff;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 19px;
+}
+
+ul {
+  text-align: left;
+  line-height: 25px;
+  font-family: proxima-nova, sans-serif;
+  font-size: 14px;
+}
+
+.email-input {
+  display: inline-block;
+  padding: 11px 21px 9px 10px;
+  text-transform: uppercase;
+  font-family: proxima-nova, sans-serif;
+  color: #dedede;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #666666;
+  width: 360px;
+  outline: none;
+  margin-right: 30px;
+  background-color: rgba(51, 51, 58, 1);
+}
+
+.btn-subscribe {
+  display: inline-block;
+  padding: 10px 18.44px;
+  background-color: #fff;
+  color: #33333a;
+  font-family: proxima-nova, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  letter-spacing: 2px;
+  text-align: center;
+  border: 1px solid #fff;
+  outline: none;
+  height: 100%;
+  text-transform: uppercase;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-subscribe:hover {
+  border: 1px solid #b2b2b2;
+  background-color: transparent;
+  color: #dedede;
+}
+
+.contact-list-item.phone-number {
+  margin-top: 60px;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links .social-link {
+  display: inline-block;
+  color: #33333a;
+  text-decoration: none;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  line-height: 28px;
+  background-color: #b2b2b2;
+  transition: all 0.4s ease-in-out;
+}
+
+.social-links .social-link:hover {
+  color: #dedede;
+  border-color: #b2b2b2;
+  background-color: #33333a;
+}
+
+.social-link.facebook {
+  margin-left: 10px;
+}
+
+.copyright {
+  width: 229px;
+  margin: 65px auto 0;
+  font-size: 14px;
+  font-family: proxima-nova, sans-serif;
+  line-height: 25px;
+}
