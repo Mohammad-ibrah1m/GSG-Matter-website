@@ -6,8 +6,10 @@
 
 .navbar {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 24px 0;
-  height: 80px;
+
+  height: 100px;
 }
