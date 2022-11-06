@@ -123,3 +123,13 @@ table {
   outline: none;
   border-radius: 0% !important;
 }
+
+.product-images {
+  flex-direction: column;
+}
+
+@media (max-width: 992px) {
+  .product-images {
+    flex-direction: row;
+  }
+}

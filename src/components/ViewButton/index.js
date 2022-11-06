@@ -55,7 +55,7 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
         <Modal.Body>
           <Row>
             <Col lg={2}>
-              <div className="d-flex flex-column align-items-center">
+              <div className="d-flex align-items-center product-images">
                 {flag &&
                   images.map((imageLink, index) => {
                     return (
