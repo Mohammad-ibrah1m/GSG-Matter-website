@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .btn-view {
   position: absolute;
   display: block;
@@ -14,4 +19,107 @@
   opacity: 0;
   color: #fff;
   transition: opacity 0.4s ease-in-out;
+}
+.small-img {
+  width: 68px !important;
+  height: 68px !important;
+  margin-top: 1rem !important;
+  border: 1px solid #dedede !important;
+  transition: all 0.4s;
+  padding: 5px;
+}
+
+.small-img:hover {
+  cursor: pointer;
+  background-color: #dedede !important;
+}
+
+.main-img {
+  width: 100%;
+  height: 691px;
+  margin-top: 1rem;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.product-info {
+  margin-top: 2rem;
+}
+
+.product-title {
+  font-size: 24px;
+  font-family: 'VLnewParis';
+}
+
+.product-price {
+  font-family: proxima-nova, sans-serif;
+  font-size: 24px;
+  color: #ff6008;
+  font-weight: 500;
+}
+
+.product-price::before {
+  content: '$';
+  margin-right: 3px;
+}
+
+.product-description-title {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-family: proxima-nova, sans-serif;
+}
+
+.product-description-details {
+  margin-top: 1rem;
+  font-size: 16px;
+  font-family: proxima-nova, sans-serif;
+}
+.table-row-title {
+  font-size: 16px;
+  margin-left: 0;
+}
+
+table {
+  margin-left: 0 !important;
+}
+
+.available-sizes {
+  margin-left: 0px;
+}
+
+.item-size {
+  padding: 4px 8px;
+  margin-top: 1rem;
+}
+
+.size-info {
+  margin-top: 1rem;
+  font-size: 12px;
+}
+
+.quantity .btn-minus,
+.quantity .btn-plus,
+.quantity .btn-quantity {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 5px 8px;
+  border: 1px solid #dedede;
+  background-color: #fff;
+  font-size: 18px;
+  outline: none;
+}
+
+.btn-minus,
+.btn-plus {
+  background-color: #dedede !important;
+}
+
+.btn-add {
+  display: inline-block !important;
+  margin-left: 1rem !important;
+  border: 1px solid #dedede;
+  font-size: 18px;
+  outline: none;
+  border-radius: 0% !important;
 }

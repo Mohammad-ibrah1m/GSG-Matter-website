@@ -4,13 +4,39 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Image } from 'react-bootstrap';
+import { Alert, Col, Image, Row } from 'react-bootstrap';
+import Stack from 'react-bootstrap/Stack';
 
-const ViewButton = ({ title, description, flag }) => {
+const ViewButton = ({ title, description, flag, price, images, brand, category }) => {
   const [show, setShow] = useState(false);
+  const [productImage, setProductImage] = useState(flag && images[images.length - 1]);
+  const [sizeInfo, setSizeInfo] = useState(null);
+  const [quantity, setQuantity] = useState(1);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  console.table(images);
+
+  const handleImageClick = (e, index) => {
+    const activeImage = images[index];
+    setProductImage(activeImage);
+  };
+
+  const handleSizeInfo = (e, index) => {
+    setSizeInfo(description);
+  };
+
+  const handleMinusButton = (e) => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    } else {
+    }
+  };
+
+  const handlePlusButton = (e) => {
+    setQuantity(quantity + 1);
+  };
 
   return (
     <>
@@ -18,22 +44,104 @@ const ViewButton = ({ title, description, flag }) => {
         className="btn-view explore-btn"
         onClick={() => {
           handleShow();
-          flag && console.log(title);
         }}
       >
         QUICK VIEW
       </button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} size="lg" centered>
         <Modal.Header closeButton>
           <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{description}</Modal.Body>
+        <Modal.Body>
+          <Row>
+            <Col lg={2}>
+              <div className="d-flex flex-column align-items-center">
+                {flag &&
+                  images.map((imageLink, index) => {
+                    return (
+                      <>
+                        <Image
+                          src={imageLink}
+                          className="small-img"
+                          onClick={(e) => handleImageClick(e, index)}
+                          id={index}
+                        />
+                      </>
+                    );
+                  })}
+              </div>
+            </Col>
+            <Col lg={5}>{flag && <Image src={productImage} className="main-img" />}</Col>
+            <Col lg={5}>
+              {flag && (
+                <div className="product-info">
+                  <h2 className="product-title">{title}</h2>
+                  <span className="product-price">{price}</span>
+                  <div className="product-description">
+                    <h4 className="product-description-title">Description</h4>
+                    <p className="product-description-details">{description}</p>
+                  </div>
+
+                  <table class="table">
+                    <tbody>
+                      <tr>
+                        <th scope="row" className="table-row-title">
+                          {category[0].toUpperCase() + category.slice(1)}
+                        </th>
+                        <td>54 Jobs</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" className="table-row-title">
+                          Partnership
+                        </th>
+                        <td>Randall Armstrong</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" className="table-row-title">
+                          In Collab
+                        </th>
+                        <td>Augusta Mendoza</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div className="available-sizes">
+                    <h4 className="product-description-title">Size</h4>
+                    <Stack direction="horizontal" gap={3}>
+                      <div className="bg-light border item-size" onClick={handleSizeInfo}>
+                        1
+                      </div>
+                      <div className="bg-light border item-size" onClick={handleSizeInfo}>
+                        2
+                      </div>
+                      <div className="bg-light border item-size" onClick={handleSizeInfo}>
+                        3
+                      </div>
+                    </Stack>
+                    <p className="size-info">{sizeInfo}</p>
+                  </div>
+                  <div className="quantity">
+                    <h4 className="product-description-title">Quantity</h4>
+                    <div className="quantity-control">
+                      <button className="btn-minus" onClick={(e) => handleMinusButton(e)}>
+                        -
+                      </button>
+                      <button className="btn-quantity">{quantity}</button>
+                      <button className="btn-plus" onClick={(e) => handlePlusButton(e)}>
+                        +
+                      </button>
+                      <Button variant="secondary" className="btn-add">
+                        ADD TO CART
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </Col>
+          </Row>
+        </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
+          <Button variant="secondary" className="btn-view-all-products mx-auto">
+            VIEW ALL PRODUCTS
           </Button>
         </Modal.Footer>
       </Modal>
