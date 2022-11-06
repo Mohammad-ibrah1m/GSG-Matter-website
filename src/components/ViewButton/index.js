@@ -58,19 +58,26 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
                 {flag &&
                   images.map((imageLink, index) => {
                     return (
-                      <>
+                      <div className="small-image-holder">
                         <Image
                           src={imageLink}
                           className="small-img"
                           onClick={(e) => handleImageClick(e, index)}
                           id={index}
+                          key={index}
                         />
-                      </>
+                      </div>
                     );
                   })}
               </div>
             </Col>
-            <Col lg={5}>{flag && <Image src={productImage} className="main-img" />}</Col>
+            <Col lg={5}>
+              {flag && (
+                <div className="main-image-holder">
+                  <Image src={productImage} className="main-img" />
+                </div>
+              )}
+            </Col>
             <Col lg={5}>
               {flag && (
                 <div className="product-info">
