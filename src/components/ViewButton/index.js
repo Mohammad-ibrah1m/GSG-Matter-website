@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Alert, Col, Image, Row } from 'react-bootstrap';
+import { Col, Image, Row } from 'react-bootstrap';
 import Stack from 'react-bootstrap/Stack';
 
 const ViewButton = ({ title, description, flag, price, images, brand, category }) => {
@@ -30,7 +30,6 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
   const handleMinusButton = (e) => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
-    } else {
     }
   };
 

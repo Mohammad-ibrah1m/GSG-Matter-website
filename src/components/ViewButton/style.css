@@ -91,6 +91,15 @@ table {
 .item-size {
   padding: 4px 8px;
   margin-top: 1rem;
+  transition: all 0.4s;
+}
+
+.item-size:active,
+.item-size:focus,
+.item-size:hover {
+  background-color: #dedede !important;
+  color: #33333a;
+  cursor: pointer;
 }
 
 .size-info {
