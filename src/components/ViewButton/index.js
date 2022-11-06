@@ -5,12 +5,12 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Image, Row } from 'react-bootstrap';
-import Stack from 'react-bootstrap/Stack';
+import AvailableSizes from '../AvailableSizes';
 
 const ViewButton = ({ title, description, flag, price, images, brand, category }) => {
   const [show, setShow] = useState(false);
   const [productImage, setProductImage] = useState(flag && images[images.length - 1]);
-  const [sizeInfo, setSizeInfo] = useState(null);
+  /* const [sizeInfo, setSizeInfo] = useState(null); */
   const [quantity, setQuantity] = useState(1);
 
   const handleClose = () => setShow(false);
@@ -23,9 +23,9 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
     setProductImage(activeImage);
   };
 
-  const handleSizeInfo = (e, index) => {
+  /* const handleSizeInfo = (e, index) => {
     setSizeInfo(description);
-  };
+  }; */
 
   const handleMinusButton = (e) => {
     if (quantity > 1) {
@@ -110,21 +110,7 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
                       </tr>
                     </tbody>
                   </table>
-                  <div className="available-sizes">
-                    <h4 className="product-description-title">Size</h4>
-                    <Stack direction="horizontal" gap={3}>
-                      <div className="bg-light border item-size" onClick={handleSizeInfo}>
-                        1
-                      </div>
-                      <div className="bg-light border item-size" onClick={handleSizeInfo}>
-                        2
-                      </div>
-                      <div className="bg-light border item-size" onClick={handleSizeInfo}>
-                        3
-                      </div>
-                    </Stack>
-                    <p className="size-info">{sizeInfo}</p>
-                  </div>
+                  <AvailableSizes description={description} />
                   <div className="quantity">
                     <h4 className="product-description-title">Quantity</h4>
                     <div className="quantity-control">

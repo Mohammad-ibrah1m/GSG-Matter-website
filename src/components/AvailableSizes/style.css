@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.available-sizes {
+  margin-left: 0px;
+}
+
+.item-size {
+  padding: 4px 8px;
+  margin-top: 1rem;
+  transition: all 0.4s;
+}
+
+.item-size:active,
+.item-size:focus,
+.item-size:hover {
+  background-color: #dedede !important;
+  color: #33333a;
+  cursor: pointer;
+}
+
+.size-info {
+  margin-top: 1rem;
+  font-size: 12px;
+}
