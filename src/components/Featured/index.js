@@ -52,10 +52,10 @@ const Featured = () => {
       <div className="container">
         <SectionHeader />
         <div className="featured-items">
-          {FeaturedData.map((item) => {
+          {FeaturedData.map((item, index) => {
             return (
               <>
-                <ItemBox {...item} />
+                <ItemBox {...item} id={index} />
               </>
             );
           })}
