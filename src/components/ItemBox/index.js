@@ -4,13 +4,14 @@ import React from 'react';
 import ViewButton from '../ViewButton';
 import { useState } from 'react';
 
-const ItemBox = ({ title, price, image, id }) => {
+const ItemBox = ({ title, price, image, id, allProducts, flag }) => {
   return (
     <div className="box-item" key={id}>
-      <img src={image} alt="" srcset="" className="item-image" />
+      <img src={image} className="item-image" />
       <p className="item-title">{title}</p>
       <span className="item-price">{price}</span>
-      <ViewButton />
+
+      {flag && <ViewButton {...allProducts[id]} flag={flag} />}
     </div>
   );
 };

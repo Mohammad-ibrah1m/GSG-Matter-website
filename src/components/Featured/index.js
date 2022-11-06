@@ -3,8 +3,14 @@ import './style.css';
 import React from 'react';
 import ItemBox from '../ItemBox';
 import SectionHeader from '../SectionHeader';
+import { Badge } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const Featured = () => {
+  const [allProducts, setAllProducts] = useState(null);
+  const [flag, setFlag] = useState(false);
   const FeaturedData = [
     {
       title: 'Pueraria Mirifica And Study Phyto Estrogens',
@@ -47,6 +53,17 @@ const Featured = () => {
       image: 'assets/images/featured-8.png',
     },
   ];
+
+  const getData = async () => {
+    const response = await axios.get('https://dummyjson.com/products');
+    setAllProducts(response.data.products);
+    setFlag(true);
+  };
+
+  useEffect(() => {
+    getData();
+  });
+
   return (
     <section className="section bg-grey">
       <div className="container">
@@ -54,9 +71,7 @@ const Featured = () => {
         <div className="featured-items">
           {FeaturedData.map((item, index) => {
             return (
-              <>
-                <ItemBox {...item} id={index} />
-              </>
+              <>{flag && <ItemBox {...item} id={index} allProducts={allProducts} flag={flag} />}</>
             );
           })}
         </div>
