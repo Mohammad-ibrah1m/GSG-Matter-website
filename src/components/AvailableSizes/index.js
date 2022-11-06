@@ -19,7 +19,11 @@ const AvailableSizes = ({ description }) => {
           {sizes.map((size, index) => {
             return (
               <>
-                <div className="bg-light border item-size" onClick={handleSizeInfo} key={index}>
+                <div
+                  className="bg-light border item-size"
+                  onClick={(e, index) => handleSizeInfo(e, index)}
+                  key={index}
+                >
                   {size}
                 </div>
               </>

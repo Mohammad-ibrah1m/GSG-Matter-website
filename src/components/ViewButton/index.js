@@ -7,35 +7,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Image, Row } from 'react-bootstrap';
 import AvailableSizes from '../AvailableSizes';
 import ContentHeader from '../ContentHeader';
+import ContentTable from '../ContentTable';
+import Quantity from '../Quantity';
 
 const ViewButton = ({ title, description, flag, price, images, brand, category }) => {
   const [show, setShow] = useState(false);
   const [productImage, setProductImage] = useState(flag && images[images.length - 1]);
-  /* const [sizeInfo, setSizeInfo] = useState(null); */
-  const [quantity, setQuantity] = useState(1);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  console.table(images);
-
   const handleImageClick = (e, index) => {
     const activeImage = images[index];
     setProductImage(activeImage);
-  };
-
-  /* const handleSizeInfo = (e, index) => {
-    setSizeInfo(description);
-  }; */
-
-  const handleMinusButton = (e) => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  const handlePlusButton = (e) => {
-    setQuantity(quantity + 1);
   };
 
   return (
@@ -88,45 +72,9 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
                     <ContentHeader sectionTitle={'Description'} />
                     <p className="product-description-details">{description}</p>
                   </div>
-
-                  <table class="table">
-                    <tbody>
-                      <tr>
-                        <th scope="row" className="table-row-title">
-                          {category[0].toUpperCase() + category.slice(1)}
-                        </th>
-                        <td>54 Jobs</td>
-                      </tr>
-                      <tr>
-                        <th scope="row" className="table-row-title">
-                          Partnership
-                        </th>
-                        <td>Randall Armstrong</td>
-                      </tr>
-                      <tr>
-                        <th scope="row" className="table-row-title">
-                          In Collab
-                        </th>
-                        <td>Augusta Mendoza</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                  <ContentTable category={category} />
                   <AvailableSizes description={description} />
-                  <div className="quantity">
-                    <ContentHeader sectionTitle={'Quantity'} />
-                    <div className="quantity-control">
-                      <button className="btn-minus" onClick={(e) => handleMinusButton(e)}>
-                        -
-                      </button>
-                      <button className="btn-quantity">{quantity}</button>
-                      <button className="btn-plus" onClick={(e) => handlePlusButton(e)}>
-                        +
-                      </button>
-                      <Button variant="secondary" className="btn-add">
-                        ADD TO CART
-                      </Button>
-                    </div>
-                  </div>
+                  <Quantity />
                 </div>
               )}
             </Col>
