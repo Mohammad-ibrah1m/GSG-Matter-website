@@ -6,6 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Image, Row } from 'react-bootstrap';
 import AvailableSizes from '../AvailableSizes';
+import ContentHeader from '../ContentHeader';
 
 const ViewButton = ({ title, description, flag, price, images, brand, category }) => {
   const [show, setShow] = useState(false);
@@ -84,7 +85,7 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
                   <h2 className="product-title">{title}</h2>
                   <span className="product-price">{price}</span>
                   <div className="product-description">
-                    <h4 className="product-description-title">Description</h4>
+                    <ContentHeader sectionTitle={'Description'} />
                     <p className="product-description-details">{description}</p>
                   </div>
 
@@ -112,7 +113,7 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
                   </table>
                   <AvailableSizes description={description} />
                   <div className="quantity">
-                    <h4 className="product-description-title">Quantity</h4>
+                    <ContentHeader sectionTitle={'Quantity'} />
                     <div className="quantity-control">
                       <button className="btn-minus" onClick={(e) => handleMinusButton(e)}>
                         -

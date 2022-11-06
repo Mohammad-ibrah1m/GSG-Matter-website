@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import { useState } from 'react';
 import { Stack } from 'react-bootstrap';
+import ContentHeader from '../ContentHeader';
 
 const AvailableSizes = ({ description }) => {
   const [sizeInfo, setSizeInfo] = useState(null);
@@ -13,7 +14,7 @@ const AvailableSizes = ({ description }) => {
   return (
     <>
       <div className="available-sizes">
-        <h4 className="product-description-title">Size</h4>
+        <ContentHeader sectionTitle={'Size'} />
         <Stack direction="horizontal" gap={3}>
           {sizes.map((size, index) => {
             return (

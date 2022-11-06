@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.product-description-title {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 18px;
+  font-family: proxima-nova, sans-serif;
+}
