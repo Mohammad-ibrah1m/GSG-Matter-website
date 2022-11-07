@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Image, Row, Tooltip } from 'react-bootstrap';
+import { Col, Image, Row } from 'react-bootstrap';
 import AvailableSizes from '../AvailableSizes';
 import ContentHeader from '../ContentHeader';
 import ContentTable from '../ContentTable';
@@ -69,7 +69,7 @@ const ViewButton = ({
             <Col lg={5}>
               {flag && (
                 <div className="main-image-holder">
-                  <Image src={productImage} className="main-img" />
+                  <Image src={productImage} className="main-img" alt={description} />
                 </div>
               )}
             </Col>

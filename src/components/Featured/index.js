@@ -13,22 +13,22 @@ const Featured = () => {
   const FeaturedData = [
     {
       title: 'Pueraria Mirifica And Study Phyto Estrogens',
-      price: '$599',
+      price: '$800',
       image: 'assets/images/featured.png',
     },
     {
       title: 'Pueraria Mirifica And Study Phyto Estrogens',
-      price: '$599',
+      price: '$499',
       image: 'assets/images/featured-2.png',
     },
     {
       title: 'Pueraria Mirifica And Study Phyto Estrogens',
-      price: '$599',
+      price: '$299',
       image: 'assets/images/featured-3.png',
     },
     {
       title: 'Pueraria Mirifica And Study Phyto Estrogens',
-      price: '$599',
+      price: '$1599',
       image: 'assets/images/featured-4.png',
     },
     {
@@ -43,12 +43,12 @@ const Featured = () => {
     },
     {
       title: 'Pueraria Mirifica And Study Phyto Estrogens',
-      price: '$599',
+      price: '$559',
       image: 'assets/images/featured-7.png',
     },
     {
       title: 'Pueraria Mirifica And Study Phyto Estrogens',
-      price: '$599',
+      price: '$705',
       image: 'assets/images/featured-8.png',
     },
   ];
