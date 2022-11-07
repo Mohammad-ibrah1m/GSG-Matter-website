@@ -69,10 +69,19 @@
   margin-right: 3px;
 }
 
+.rating-value {
+  font-size: 12px;
+  font-family: proxima-nova, sans-serif;
+  color: #666666;
+  margin-left: 3rem;
+  width: fit-content;
+}
+
 .product-description-details {
   margin-top: 1rem;
-  font-size: 16px;
+  font-size: 14px;
   font-family: proxima-nova, sans-serif;
+  color: #666666;
 }
 
 .product-images {
@@ -82,5 +91,15 @@
 @media (max-width: 992px) {
   .product-images {
     flex-direction: row;
+  }
+
+  .rating-holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rating-value {
+    font-size: 14px;
   }
 }

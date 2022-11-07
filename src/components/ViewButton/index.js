@@ -1,19 +1,29 @@
 import './style.css';
-
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css';
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Image, Row } from 'react-bootstrap';
+import { Col, Image, Row, Tooltip } from 'react-bootstrap';
 import AvailableSizes from '../AvailableSizes';
 import ContentHeader from '../ContentHeader';
 import ContentTable from '../ContentTable';
 import Quantity from '../Quantity';
 
-const ViewButton = ({ title, description, flag, price, images, brand, category }) => {
+const ViewButton = ({
+  title,
+  description,
+  flag,
+  price,
+  images,
+  brand,
+  category,
+  thumbnail,
+  rating,
+}) => {
   const [show, setShow] = useState(false);
-  const [productImage, setProductImage] = useState(flag && images[images.length - 1]);
-
+  const [productImage, setProductImage] = useState(flag && thumbnail);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -67,7 +77,17 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
               {flag && (
                 <div className="product-info">
                   <h2 className="product-title">{title}</h2>
-                  <span className="product-price">{price}</span>
+                  <Row className="justify-content-between">
+                    <Col lg={2}>
+                      <span className="product-price">{price}</span>
+                    </Col>
+                    <Col lg={7}>
+                      <div className="rating-holder">
+                        <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
+                        <span className="rating-value d-inline-block">{rating} out of 5</span>
+                      </div>
+                    </Col>
+                  </Row>
                   <div className="product-description">
                     <ContentHeader sectionTitle={'Description'} />
                     <p className="product-description-details">{description}</p>
