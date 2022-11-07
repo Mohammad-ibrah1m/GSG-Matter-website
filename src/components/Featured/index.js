@@ -3,7 +3,6 @@ import './style.css';
 import React from 'react';
 import ItemBox from '../ItemBox';
 import SectionHeader from '../SectionHeader';
-import { Badge } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -65,7 +64,7 @@ const Featured = () => {
   });
 
   return (
-    <section className="section bg-grey">
+    <section className={!!flag ? 'section bg-grey' : 'section bg-grey hidden'}>
       <div className="container">
         <SectionHeader />
         <div className="featured-items">
