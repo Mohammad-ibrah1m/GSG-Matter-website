@@ -44,7 +44,7 @@ const ViewButton = ({
       </button>
       <Modal show={show} onHide={handleClose} size="lg" centered>
         <Modal.Header closeButton>
-          <Modal.Title>{title}</Modal.Title>
+          <Modal.Title className="modal-main-title">{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Row>

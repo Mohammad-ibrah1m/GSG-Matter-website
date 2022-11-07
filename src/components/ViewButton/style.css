@@ -88,6 +88,10 @@
   flex-direction: column;
 }
 
+.modal-main-title {
+  font-family: 'VLnewParis', sans-serif;
+}
+
 @media (max-width: 992px) {
   .product-images {
     flex-direction: row;
