@@ -73,7 +73,7 @@ const ViewButton = ({ title, description, flag, price, images, brand, category }
                     <p className="product-description-details">{description}</p>
                   </div>
                   <ContentTable category={category} />
-                  <AvailableSizes description={description} />
+                  <AvailableSizes description={description} brand={brand} />
                   <Quantity />
                 </div>
               )}
