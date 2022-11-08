@@ -1,0 +1,15 @@
+.header-content .header-title {
+  font-size: 60px;
+  width: 85%;
+  margin-right: 5rem;
+  text-transform: capitalize;
+  font-family: 'VL NewParis Headline Regular', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.33333;
+}
+
+.header-content .header-title.centered {
+  width: 100%;
+  margin-right: 0;
+}

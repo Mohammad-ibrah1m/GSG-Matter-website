@@ -1,0 +1,21 @@
+.header-content .shop-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 2rem;
+}
+
+.header-content .shop-btn::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  margin-top: 1rem;
+}
