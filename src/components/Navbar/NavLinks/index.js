@@ -2,7 +2,7 @@ import './style.css';
 
 import NavLink from './NavLink';
 
-const NavLinks = () => {
+const NavLinks = ({ Links }) => {
   return (
     <div className="nav-left">
       <ul className="nav-list">
@@ -13,10 +13,10 @@ const NavLinks = () => {
             </a>
           </h2>
         </li>
-        {[1, 2, 3, 4].map((item) => {
+        {Links.map((item) => {
           return (
             <>
-              <NavLink />
+              <NavLink link={item} />
             </>
           );
         })}

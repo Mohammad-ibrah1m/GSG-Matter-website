@@ -1,11 +1,16 @@
 .nav-link {
-  color: #33333a;
+  color: #030303;
   text-decoration: none;
   font-family: proxima-nova, sans-serif;
   font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #33333a !important;
 }
 
 .dropdown-icon {
