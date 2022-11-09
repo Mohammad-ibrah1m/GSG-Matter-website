@@ -61,7 +61,7 @@ const Featured = () => {
 
   useEffect(() => {
     getData();
-  });
+  }, []);
 
   return (
     <section className={!!flag ? 'section bg-grey' : 'section bg-grey hidden'}>
