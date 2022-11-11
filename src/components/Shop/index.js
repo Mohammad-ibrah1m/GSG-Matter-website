@@ -8,7 +8,7 @@ const Shop = () => {
   return (
     <section className="section bg-grey shop-section">
       <SectionHeader />
-      <div className="containertest">
+      <div className="container">
         <div className="shop-content-holder">
           {[1, 2, 3, 4].map((item) => (
             <ShopItem />

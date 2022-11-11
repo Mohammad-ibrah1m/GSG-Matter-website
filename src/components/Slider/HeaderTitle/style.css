@@ -5,8 +5,12 @@
   text-transform: capitalize;
   font-family: 'VL NewParis Headline Regular', sans-serif;
   font-weight: 400;
-  color: #fff;
+  color: #fff !important;
   line-height: 1.33333;
+}
+
+.header-title.productsListing-title {
+  color: #33333a !important;
 }
 
 .header-content .header-title.centered {

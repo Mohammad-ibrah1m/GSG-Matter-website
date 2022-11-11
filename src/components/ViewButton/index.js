@@ -16,14 +16,17 @@ const ViewButton = ({
   description,
   flag,
   price,
+  image,
   images,
   brand,
   category,
   thumbnail,
   rating,
+  from,
+  rate,
 }) => {
   const [show, setShow] = useState(false);
-  const [productImage, setProductImage] = useState(flag && thumbnail);
+  const [productImage, setProductImage] = useState(from !== 'side' && thumbnail);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -48,32 +51,34 @@ const ViewButton = ({
         </Modal.Header>
         <Modal.Body>
           <Row>
-            <Col lg={2}>
-              <div className="d-flex align-items-center product-images">
-                {flag &&
-                  images.map((imageLink, index) => {
-                    return (
-                      <div className="small-image-holder">
-                        <Image
-                          src={imageLink}
-                          className="small-img"
-                          onClick={(e) => handleImageClick(e, index)}
-                          id={index}
-                          key={index}
-                        />
-                      </div>
-                    );
-                  })}
-              </div>
-            </Col>
+            {from !== 'side' && (
+              <Col lg={2}>
+                <div className="d-flex align-items-center product-images">
+                  {from !== 'side' &&
+                    images?.map((imageLink, index) => {
+                      return (
+                        <div className="small-image-holder">
+                          <Image
+                            src={imageLink}
+                            className="small-img"
+                            onClick={(e) => handleImageClick(e, index)}
+                            id={index}
+                            key={index}
+                          />
+                        </div>
+                      );
+                    })}
+                </div>
+              </Col>
+            )}
             <Col lg={5}>
               {flag && (
-                <div className="main-image-holder">
-                  <Image src={productImage} className="main-img" alt={description} />
+                <div className="main-image-holder ">
+                  <Image src={productImage || image} className="main-img" alt={description} />
                 </div>
               )}
             </Col>
-            <Col lg={5}>
+            <Col lg={5} className="ms-auto">
               {flag && (
                 <div className="product-info">
                   <h2 className="product-title">{title}</h2>
@@ -82,10 +87,18 @@ const ViewButton = ({
                       <span className="product-price">{price}</span>
                     </Col>
                     <Col lg={7}>
-                      <div className="rating-holder">
-                        <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
-                        <span className="rating-value d-inline-block">{rating} out of 5</span>
-                      </div>
+                      {from === 'side' && (
+                        <div className="rating-holder">
+                          <Rating style={{ maxWidth: 150 }} value={rate} readOnly />
+                          <span className="rating-value d-inline-block">{rate} out of 5</span>
+                        </div>
+                      )}
+                      {from !== 'side' && (
+                        <div className="rating-holder">
+                          <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
+                          <span className="rating-value d-inline-block">{rating} out of 5</span>
+                        </div>
+                      )}
                     </Col>
                   </Row>
                   <div className="product-description">
@@ -93,7 +106,8 @@ const ViewButton = ({
                     <p className="product-description-details">{description}</p>
                   </div>
                   <ContentTable category={category} />
-                  <AvailableSizes description={description} brand={brand} />
+                  {from === 'side' && <AvailableSizes description={description} brand={category} />}
+                  {from !== 'side' && <AvailableSizes description={description} brand={brand} />}
                   <Quantity />
                 </div>
               )}

@@ -1,10 +1,14 @@
 .shop-content-holder {
   margin: 28px auto auto;
   display: grid;
-  grid-template-columns: 263px 263px 263px 263px;
-  gap: 0px 30px;
-  justify-content: center;
-  padding-left: 29px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px 0;
+}
+
+@media (max-width: 600px) {
+  .shop-content-holder {
+    grid-template-columns: auto;
+  }
 }
 
 .containertest {

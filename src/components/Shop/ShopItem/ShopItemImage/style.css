@@ -1,5 +1,9 @@
 .shop-item-img {
   display: block;
   width: 100%;
-  height: 400px;
+  height: auto;
+}
+
+.shop-item-img-holder {
+  width: 100%;
 }

@@ -6,21 +6,20 @@
 
 header {
   height: 80vh;
-  background-image: url('../../../public/assets/images/header.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
+  background-color: #f3f3f3;
 }
 
-header.main {
+header.homepage {
   justify-content: flex-end !important;
-}
-
-header.centered {
-  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url('../../../public/assets/images/header.png');
 }
 
 @font-face {
@@ -36,7 +35,7 @@ header.centered {
   margin-bottom: 2rem;
 }
 
-.header-content.centered {
+.header-content.productsListing {
   margin-right: 0;
   margin-bottom: 0;
 }
