@@ -9,7 +9,7 @@ import './style.css';
 const ProductsList = () => {
   const [allProducts, setAllProducts] = useState(null);
   const [flag, setFlag] = useState(false);
-  const [sorted, setSorted] = useState([]);
+  const [sorted, setSorted] = useState(allProducts);
   const categories = ["men's clothing", "women's clothing", 'electronics', 'jewelery'];
 
   const getData = async () => {
@@ -29,11 +29,18 @@ const ProductsList = () => {
   };
 
   const handleSortByPrice = (e) => {
-    const sortedProducts = allProducts?.sort((a, b) => {
-      return a.price - b.price;
-    });
+    let sortedProducts = [];
+    if (Number(e.target.value) === 0) {
+      sortedProducts = [...allProducts]?.sort((a, b) => {
+        return a.price - b.price;
+      });
+    } else {
+      sortedProducts = [...allProducts]?.sort((a, b) => {
+        return b.rating.rate - a.rating.rate;
+      });
+    }
     setSorted(sortedProducts);
-    console.log(allProducts);
+    setAllProducts(sortedProducts);
   };
 
   return (
@@ -57,7 +64,7 @@ const ProductsList = () => {
                   Sort by
                 </option>
                 <option value="0">Price </option>
-                <option value="1">Name</option>
+                <option value="1">Rating</option>
               </Form.Select>
             </Col>
             <Col lg={3} sm={12}>
@@ -73,7 +80,7 @@ const ProductsList = () => {
                     <h6 className="text-start">Categories</h6>
                   </Accordion.Header>
                   <Accordion.Body>
-                    {categories.map((item, index) => {
+                    {categories.map((item, index, category) => {
                       return (
                         <>
                           <a
