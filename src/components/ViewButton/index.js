@@ -24,6 +24,9 @@ const ViewButton = ({
   rating,
   from,
   rate,
+  discountPercentage,
+  stock,
+  count,
 }) => {
   const [show, setShow] = useState(false);
   const [productImage, setProductImage] = useState(from !== 'side' && thumbnail);
@@ -105,7 +108,9 @@ const ViewButton = ({
                     <ContentHeader sectionTitle={'Description'} />
                     <p className="product-description-details">{description}</p>
                   </div>
+
                   <ContentTable category={category} />
+
                   {from === 'side' && <AvailableSizes description={description} brand={category} />}
                   {from !== 'side' && <AvailableSizes description={description} brand={brand} />}
                   <Quantity />

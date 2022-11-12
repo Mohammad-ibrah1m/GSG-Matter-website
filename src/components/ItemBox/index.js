@@ -33,6 +33,7 @@ const ItemBox = ({
           from={from}
           category={category}
           rate={rating.rate}
+          count={rating.count}
         />
       )}
     </div>
