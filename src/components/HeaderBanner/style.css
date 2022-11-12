@@ -33,11 +33,9 @@ header.homepage {
 .header-content {
   margin-right: 7rem;
   margin-bottom: 2rem;
-  text-align: left !important;
 }
 
 .header-content.productsListing {
   margin-right: 0;
   margin-bottom: 0;
-  text-align: center !important;
 }

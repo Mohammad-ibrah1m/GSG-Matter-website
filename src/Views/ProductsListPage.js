@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductsList from '../components/ProductsList';
-import Slider from '../components/Slider';
+import HeaderBanner from '../components/HeaderBanner';
 import Footer from '../components/Footer';
 import AdsBar from '../components/AdsBar';
 import Navbar from '../components/Navbar';
@@ -10,13 +10,12 @@ const ProductsListPage = () => {
     <>
       <AdsBar />
       <Navbar />
-      <Slider
-        from="productListing"
+      <HeaderBanner
         title="Apparels"
-        headerClass="productListing"
         description={
           "White Gold began gaining popularity in the early 1900's as an alternative to platinum. "
         }
+        image="assets/images/featured-4.png"
       />
       <ProductsList />
       <Footer />

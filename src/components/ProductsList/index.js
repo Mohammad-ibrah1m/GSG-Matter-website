@@ -48,25 +48,29 @@ const ProductsList = () => {
       <section className="bg-grey section">
         <Container fluid>
           <Row>
-            <Col lg={6} sm={6}>
-              <div className="text-start mt-2">
-                <h4 className="ms-3">Women</h4>
-              </div>
-            </Col>
-            <Col lg={6} sm={6}>
-              <Form.Select
-                aria-label="Default select example"
-                onChange={handleSortByPrice}
-                id="sort"
-                className="mt-2"
-              >
-                <option disabled selected>
-                  Sort by
-                </option>
-                <option value="0">Price </option>
-                <option value="1">Rating</option>
-              </Form.Select>
-            </Col>
+            <div className="sort-container">
+              <Row>
+                <Col lg={6} sm={6}>
+                  <div className="text-start mt-2">
+                    <h4 className="ms-3">Women</h4>
+                  </div>
+                </Col>
+                <Col lg={6} sm={6}>
+                  <Form.Select
+                    aria-label="Default select example"
+                    onChange={handleSortByPrice}
+                    id="sort"
+                    className="mt-2"
+                  >
+                    <option disabled selected>
+                      Sort by
+                    </option>
+                    <option value="0">Price </option>
+                    <option value="1">Rating</option>
+                  </Form.Select>
+                </Col>
+              </Row>
+            </div>
             <Col lg={3} sm={12}>
               <div className="d-flex justify-content-between">
                 <h4 className="ms-3">Filters</h4>

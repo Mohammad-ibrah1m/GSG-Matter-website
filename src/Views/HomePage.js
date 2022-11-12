@@ -15,12 +15,7 @@ const HomePage = () => {
     <>
       <AdsBar />
       <Navbar />
-      <Slider
-        title="Perfume Tips Tricks"
-        from={'homepage'}
-        link={'shop now'}
-        headerClass="homepage"
-      />
+      <Slider title="Perfume Tips Tricks" link={'shop now'} />
       <Featured />
       <About />
       <Explore />
