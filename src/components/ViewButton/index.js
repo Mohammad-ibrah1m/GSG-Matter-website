@@ -117,7 +117,7 @@ const ViewButton = ({
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" className="btn-view-all-products mx-auto">
-            <Link to={'productspage'} className="page-link">
+            <Link to={'products'} className="page-link">
               VIEW ALL PRODUCTS
             </Link>
           </Button>

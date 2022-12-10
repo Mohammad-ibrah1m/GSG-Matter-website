@@ -1,10 +1,10 @@
 import React from 'react';
 import AdsBar from '../components/AdsBar';
+import AsSeenOn from '../components/AsSeenOn';
 import Navbar from '../components/Navbar';
 import ProductInfo from '../components/ProductInfo';
-import { Image } from 'react-bootstrap';
 import ProductInfoBanner from '../components/ProductInfoBanner';
-import SectionHeader from '../components/SectionHeader';
+import Footer from '../components/Footer';
 
 const ProductInfoPage = () => {
   return (
@@ -13,7 +13,8 @@ const ProductInfoPage = () => {
       <Navbar />
       <ProductInfo />
       <ProductInfoBanner />
-      <SectionHeader title="As seen on Instagram" />
+      <AsSeenOn />
+      <Footer />
     </>
   );
 };
