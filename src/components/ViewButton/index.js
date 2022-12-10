@@ -10,6 +10,7 @@ import AvailableSizes from '../AvailableSizes';
 import ContentHeader from '../ContentHeader';
 import ContentTable from '../ContentTable';
 import Quantity from '../Quantity';
+import { Link } from 'react-router-dom';
 
 const ViewButton = ({
   title,
@@ -22,14 +23,9 @@ const ViewButton = ({
   category,
   thumbnail,
   rating,
-  from,
-  rate,
-  discountPercentage,
-  stock,
-  count,
 }) => {
   const [show, setShow] = useState(false);
-  const [productImage, setProductImage] = useState(from !== 'side' && thumbnail);
+  const [productImage, setProductImage] = useState(thumbnail);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -54,26 +50,25 @@ const ViewButton = ({
         </Modal.Header>
         <Modal.Body>
           <Row>
-            {from !== 'side' && (
+            {
               <Col lg={2}>
                 <div className="d-flex align-items-center product-images">
-                  {from !== 'side' &&
-                    images?.map((imageLink, index) => {
-                      return (
-                        <div className="small-image-holder">
-                          <Image
-                            src={imageLink}
-                            className="small-img"
-                            onClick={(e) => handleImageClick(e, index)}
-                            id={index}
-                            key={index}
-                          />
-                        </div>
-                      );
-                    })}
+                  {images?.map((imageLink, index) => {
+                    return (
+                      <div className="small-image-holder">
+                        <Image
+                          src={imageLink}
+                          className="small-img"
+                          onClick={(e) => handleImageClick(e, index)}
+                          id={index}
+                          key={index}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </Col>
-            )}
+            }
             <Col lg={5}>
               {flag && (
                 <div className="main-image-holder ">
@@ -90,29 +85,20 @@ const ViewButton = ({
                       <span className="product-price">{price}</span>
                     </Col>
                     <Col lg={7}>
-                      {from === 'side' && (
-                        <div className="rating-holder">
-                          <Rating style={{ maxWidth: 150 }} value={rate} readOnly />
-                          <span className="rating-value d-inline-block">{rate} out of 5</span>
-                        </div>
-                      )}
-                      {from !== 'side' && (
+                      {
                         <div className="rating-holder">
                           <Rating style={{ maxWidth: 150 }} value={rating} readOnly />
                           <span className="rating-value d-inline-block">{rating} out of 5</span>
                         </div>
-                      )}
+                      }
                     </Col>
                   </Row>
                   <div className="product-description">
                     <ContentHeader sectionTitle={'Description'} />
                     <p className="product-description-details">{description}</p>
                   </div>
-
                   <ContentTable category={category} />
-
-                  {from === 'side' && <AvailableSizes description={description} brand={category} />}
-                  {from !== 'side' && <AvailableSizes description={description} brand={brand} />}
+                  <AvailableSizes description={description} brand={brand} />
                   <Quantity />
                 </div>
               )}
@@ -121,7 +107,9 @@ const ViewButton = ({
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" className="btn-view-all-products mx-auto">
-            VIEW ALL PRODUCTS
+            <Link to={'productspage'} className="page-link">
+              VIEW ALL PRODUCTS
+            </Link>
           </Button>
         </Modal.Footer>
       </Modal>

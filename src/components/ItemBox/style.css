@@ -18,11 +18,17 @@ body {
   .featured-items {
     grid-template-columns: 1fr;
   }
+  .box-item {
+    width: 25%;
+  }
 }
 
 @media (min-width: 620px) and (max-width: 991px) {
   .featured-items {
     grid-template-columns: 1fr 1fr;
+  }
+  .box-item {
+    width: 50%;
   }
 }
 

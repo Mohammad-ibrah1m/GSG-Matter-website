@@ -13,8 +13,8 @@ const ProductsList = () => {
   const categories = ["men's clothing", "women's clothing", 'electronics', 'jewelery'];
 
   const getData = async () => {
-    const response = await axios.get('https://fakestoreapi.com/products');
-    setAllProducts(response.data);
+    const response = await axios.get('https://dummyjson.com/products');
+    setAllProducts(response.data.products);
     setFlag(true);
   };
 
@@ -114,7 +114,6 @@ const ProductsList = () => {
                           id={index}
                           allProducts={allProducts}
                           flag={flag}
-                          from={'side'}
                           key={index}
                         />
                       </Col>

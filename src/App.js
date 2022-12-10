@@ -1,10 +1,9 @@
 import './App.css';
-import ProductsListPage from './Views/ProductsListPage';
-
+import Router from './components/Router';
 function App() {
   return (
     <>
-      <ProductsListPage />
+      <Router />
     </>
   );
 }
