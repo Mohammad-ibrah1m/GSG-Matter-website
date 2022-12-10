@@ -68,7 +68,7 @@ const Featured = () => {
       <div className="container">
         <SectionHeader />
         <div className="featured-items">
-          {FeaturedData.map((item, index) => {
+          {FeaturedData?.map((item, index) => {
             return (
               <>{flag && <ItemBox {...item} id={index} allProducts={allProducts} flag={flag} />}</>
             );

@@ -1,6 +1,7 @@
 import './style.css';
 
 import NavLink from './NavLink';
+import { Link } from 'react-router-dom';
 
 const NavLinks = ({ Links }) => {
   return (
@@ -8,9 +9,9 @@ const NavLinks = ({ Links }) => {
       <ul className="nav-list">
         <li className="nav-list-item">
           <h2 className="matter-logo">
-            <a href="index.html" className="logo-link">
+            <Link to=".." className="logo-link">
               matter
-            </a>
+            </Link>
           </h2>
         </li>
         {Links.map((item) => {
