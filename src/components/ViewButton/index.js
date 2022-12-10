@@ -11,6 +11,7 @@ import ContentHeader from '../ContentHeader';
 import ContentTable from '../ContentTable';
 import Quantity from '../Quantity';
 import { Link } from 'react-router-dom';
+import { memo } from 'react';
 
 const ViewButton = ({
   title,
@@ -23,9 +24,11 @@ const ViewButton = ({
   category,
   thumbnail,
   rating,
+  ide,
 }) => {
   const [show, setShow] = useState(false);
   const [productImage, setProductImage] = useState(thumbnail);
+  const [cart, setCart] = useState([]);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -99,7 +102,14 @@ const ViewButton = ({
                   </div>
                   <ContentTable category={category} />
                   <AvailableSizes description={description} brand={brand} />
-                  <Quantity />
+                  <Quantity
+                    description={description}
+                    title={title}
+                    image={thumbnail}
+                    price={price}
+                    cart={cart}
+                    setCart={setCart}
+                  />
                 </div>
               )}
             </Col>
@@ -117,4 +127,4 @@ const ViewButton = ({
   );
 };
 
-export default ViewButton;
+export default memo(ViewButton);

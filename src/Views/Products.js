@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import AdsBar from '../components/AdsBar';
 import Navbar from '../components/Navbar';
 
-const ProductsListPage = () => {
+const Products = () => {
   return (
     <>
       <AdsBar />
@@ -23,4 +23,4 @@ const ProductsListPage = () => {
   );
 };
 
-export default ProductsListPage;
+export default Products;

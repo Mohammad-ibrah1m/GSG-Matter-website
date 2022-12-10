@@ -3,7 +3,7 @@ import NavLinks from './NavLinks';
 import './style.css';
 
 const Navbar = () => {
-  const navLinks = ['shop', 'fabric', ' journal', ' about'];
+  const navLinks = ['Products', 'Cart', ' journal', ' about'];
   return (
     <nav className="navbar">
       <NavLinks Links={navLinks} />

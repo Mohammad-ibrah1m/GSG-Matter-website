@@ -1,16 +1,18 @@
 import './style.css';
 import { FaChevronDown } from 'react-icons/fa';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const NavLink = ({ link }) => {
   return (
     <>
       <li className="nav-list-item">
-        <a href="index.html" className="nav-link">
+        <Link to={link} className="nav-link">
           {link}
           <span className="dropdown-icon">
             <FaChevronDown />
           </span>
-        </a>
+        </Link>
       </li>
     </>
   );

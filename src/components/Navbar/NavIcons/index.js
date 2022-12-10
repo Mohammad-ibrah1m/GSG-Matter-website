@@ -1,5 +1,6 @@
 import './style.css';
 import { FaSearch, FaHeart, FaShoppingBag } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const NavIcons = () => {
   return (
@@ -13,9 +14,9 @@ const NavIcons = () => {
       <a href="#" className="nav-right-icons">
         <FaHeart />
       </a>
-      <a href="#" className="nav-right-icons">
+      <Link to="/cart" className="nav-right-icons">
         <FaShoppingBag />
-      </a>
+      </Link>
     </div>
   );
 };

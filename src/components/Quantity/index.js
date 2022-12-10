@@ -4,8 +4,14 @@ import { Button } from 'react-bootstrap';
 import ContentHeader from '../ContentHeader';
 import './style.css';
 
-const Quantity = () => {
+const Quantity = ({ title, price, description, image, cart, setCart }) => {
   const [quantity, setQuantity] = useState(1);
+
+  const handleAddToCart = (e, quantity, title, price, description, image) => {
+    e.preventDefault();
+    setCart([...cart, { count: quantity, name: title, pr: price, desc: description, img: image }]);
+  };
+  localStorage.setItem('cart', JSON.stringify(cart));
 
   const handleMinusButton = (e) => {
     if (quantity > 1) {
@@ -27,7 +33,11 @@ const Quantity = () => {
         <button className="btn-plus" onClick={(e) => handlePlusButton(e)}>
           +
         </button>
-        <Button variant="secondary" className="btn-add">
+        <Button
+          variant="secondary"
+          className="btn-add"
+          onClick={(e) => handleAddToCart(e, quantity, title, price, description, image)}
+        >
           ADD TO CART
         </Button>
       </div>

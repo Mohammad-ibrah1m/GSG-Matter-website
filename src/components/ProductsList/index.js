@@ -10,7 +10,28 @@ const ProductsList = () => {
   const [allProducts, setAllProducts] = useState(null);
   const [flag, setFlag] = useState(false);
   const [sorted, setSorted] = useState(allProducts);
-  const categories = ["men's clothing", "women's clothing", 'electronics', 'jewelery'];
+  const categories = [
+    'smartphones',
+    'laptops',
+    'fragrances',
+    'skincare',
+    'groceries',
+    'home-decoration',
+    'furniture',
+    'tops',
+    'womens-dresses',
+    'womens-shoes',
+    'mens-shirts',
+    'mens-shoes',
+    'mens-watches',
+    'womens-watches',
+    'womens-bags',
+    'womens-jewellery',
+    'sunglasses',
+    'automotive',
+    'motorcycle',
+    'lighting',
+  ];
 
   const getData = async () => {
     const response = await axios.get('https://dummyjson.com/products');
